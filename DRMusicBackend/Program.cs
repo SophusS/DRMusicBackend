@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
+<<<<<<< HEAD
 //Ion ssdf
+=======
+// sophus was here twice
+>>>>>>> a7df5ab8263cdd411d3573795038ba8a501ddd01
 // Add services to the container.
 // sophus was here
 builder.Services.AddControllers();
