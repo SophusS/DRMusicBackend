@@ -14,8 +14,8 @@ builder.Services.AddCors(options =>
                       builder =>
                       {
                           builder
-                            .WithOrigins("http://localhost:3000") // specifying the allowed origin
-                            .WithMethods("GET") // defining the allowed HTTP method
+                            .AllowAnyOrigin() // specifying the allowed origin
+                            .AllowAnyMethod() // defining the allowed HTTP method
                             .AllowAnyHeader(); // allowing any header to be sent
                       });
 });
@@ -28,7 +28,7 @@ var app = builder.Build();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
+app.UseCors(policyName);
 app.MapControllers();
 
 app.Run();
