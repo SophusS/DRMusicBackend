@@ -47,8 +47,16 @@ namespace DRMusicBackend.Controllers
         [HttpDelete]
         public async Task<IActionResult> Delete(int id)
         {
-            //_records.RemoveAt(id);
-             return Ok();
+
+            try
+            {
+                _records.Remove(id);
+                return Ok();
+            }
+            catch(Exception ex)
+            {
+                return StatusCode(601, ex.Message);
+            }
             
         }
 
